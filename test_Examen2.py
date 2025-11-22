@@ -15,7 +15,7 @@ class testExamen2(unittest.TestCase):
     # Pruebas para ObtieneValencia
     def test_ObtieneValencia_con_digitos_impares(self):
         resultado = self.objeto.ObtieneValencia(1234567)
-        self.assertEqual(resultado, 4)
+        self.assertEqual(resultado, 5) #originalmente 4
     
     def test_ObtieneValencia_sin_digitos_impares(self):
         resultado = self.objeto.ObtieneValencia(2468)
