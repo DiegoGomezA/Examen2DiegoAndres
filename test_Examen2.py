@@ -30,6 +30,24 @@ class testExamen2(unittest.TestCase):
         resultado = self.objeto.DivisibleTempo(7)
         self.assertEqual(resultado, [1, 7])
 
+    # Pruebas para ObtieneMasBailable
+    def test_ObtieneMasBailable_lista_con_valores(self):
+        resultado = self.objeto.ObtieneMasBailable([0.5, 0.9, 0.3, 0.7])
+        self.assertEqual(resultado, 0.9)
+
+    def test_ObtieneMasBailable_lista_vacia(self):
+        resultado = self.objeto.ObtieneMasBailable([])
+        self.assertIsNone(resultado)
+
+    # Pruebas para VerificaListaCanciones
+    def test_VerificaListaCanciones_sin_nulos(self):
+        resultado = self.objeto.VerificaListaCanciones(["Canción A", "Canción B", "Canción C"])
+        self.assertTrue(resultado)
+
+    def test_VerificaListaCanciones_con_nulos(self):
+        resultado = self.objeto.VerificaListaCanciones(["Canción A", None, "Canción C"])
+        self.assertFalse(resultado)
+
 
 if __name__ == '__main__':
     unittest.main()
