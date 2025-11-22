@@ -47,6 +47,15 @@ class testExamen2(unittest.TestCase):
     def test_VerificaListaCanciones_con_nulos(self):
         resultado = self.objeto.VerificaListaCanciones(["Canción A", None, "Canción C"])
         self.assertFalse(resultado)
+    
+    # Pruebas para Encuentra
+    def test_Encuentra_elemento_presente(self):
+        resultado = self.objeto.Encuentra([1, 5, 3, 7, 9], 7)
+        self.assertTrue(resultado)
+
+    def test_Encuentra_elemento_ausente(self):
+        resultado = self.objeto.Encuentra([2, 4, 6, 8, 10], 5)
+        self.assertFalse(resultado)
 
 
 if __name__ == '__main__':
